@@ -32,7 +32,7 @@
         <main>
             <div class="container">
                 <ul>
-                    <li v-for="card in displayCard">
+                    <li v-for="card in displayCards">
                         <div class="inner-container">
                             <div class="poster">
                                 <img :src="card.poster" :alt="card.title">
