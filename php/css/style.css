@@ -1,0 +1,29 @@
+:root {
+    --header-bg: #2e3a46;
+    --main-bg: #1e2d3b;
+    --logo-color: #1dd65f;
+}
+
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+    height: 70px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--logo-color);
+    background-color: var(--header-bg);
+}
+
+/* MAIN */
+main {
+    min-height: calc(100vh - 70px);
+    background-color: var(--main-bg);
+}
