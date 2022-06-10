@@ -16,18 +16,14 @@ const app = new Vue({
     },
     watch: {
         selectedGenre() {
-            if (this.selectedGenre !== "") {
-                axios.get("http://localhost/php-ajax-dischi/api/server.php")
-                    .then((resp) => {
-                        this.displayCards = resp.data.filter(element => {
-                            if (element.genre === this.selectedGenre) {
-                                return true;
-                            }
-                        });
-                    })
-            } else {
-                this.displayCards = this.cardsArray;
-            }
+            axios.get("http://localhost/php-ajax-dischi/api/server.php", {
+                params: {
+                    genre: this.selectedGenre,
+                }
+            })
+                .then((resp) => {
+                    this.displayCards = resp.data;
+                })
         }
     },
 })
