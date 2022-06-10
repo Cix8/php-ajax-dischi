@@ -38,7 +38,7 @@
                                 <img :src="card.poster" :alt="card.title">
                             </div>
                             <div class="title">
-                                <h4>{{ card.title }}</h4>
+                                <h4>{{ card.title.toUpperCase() }}</h4>
                             </div>
                             <div class="author">
                                 <span>{{ card.author }}</span>
