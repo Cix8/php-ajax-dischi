@@ -16,34 +16,42 @@
 
 <body>
 
-    <header>
-        <div class="logo-container">
-            <i class="fab fa-spotify"></i>
-        </div>
-    </header>
+    <div id="root">
+        <header>
+            <div class="logo-container">
+                <i class="fab fa-spotify"></i>
+            </div>
+            <div class="select-container">
+                <select id="genres" v-model="selectedGenre">
+                    <option value="" selected>Seleziona un genere</option>
+                    <option v-for="genre in genresArray" :value="genre">{{ genre }}</option>
+                </select>
+            </div>
+        </header>
 
-    <main id="root">
-        <div class="container">
-            <ul>
-                <li v-for="card in cardsArray">
-                    <div class="inner-container">
-                        <div class="poster">
-                            <img :src="card.poster" :alt="card.title">
+        <main>
+            <div class="container">
+                <ul>
+                    <li v-for="card in displayCard">
+                        <div class="inner-container">
+                            <div class="poster">
+                                <img :src="card.poster" :alt="card.title">
+                            </div>
+                            <div class="title">
+                                <h4>{{ card.title }}</h4>
+                            </div>
+                            <div class="author">
+                                <span>{{ card.author }}</span>
+                            </div>
+                            <div class="year">
+                                <small>{{ card.year }}</small>
+                            </div>
                         </div>
-                        <div class="title">
-                            <h4>{{ card.title }}</h4>
-                        </div>
-                        <div class="author">
-                            <span>{{ card.author }}</span>
-                        </div>
-                        <div class="year">
-                            <small>{{ card.year }}</small>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </main>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
